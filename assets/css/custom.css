@@ -1,0 +1,36 @@
+.sidebar {
+    position: static;
+    float: left;
+    margin-top: 90px;
+    width: 240px;
+    background: #fff;
+    box-shadow: none;
+  }
+
+  .author-logo{
+    border-radius:50%;
+	width: auto;
+	height: auto;
+	max-width: 40%;
+    max-height: 40%;	
+  }
+
+  .hu-link:hover{
+      background: gainsboro;
+  }
+  
+  .hu-tag-name:hover{
+        background: gainsboro;
+    }
+  
+.hu-a-tag{
+    margin-left:0.1em;
+}
+
+  .hu-aside-title{
+    border-left: 0.3em solid black;
+    margin-top: 1em;
+    padding-left: 1em;
+    margin-bottom: 0.4em;
+  }
+

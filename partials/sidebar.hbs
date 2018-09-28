@@ -1,59 +1,54 @@
         <section class="site-overview sidebar-panel" style="display: block;">
+            <link href="{{asset "css/custom.css"}}" rel="stylesheet" type="text/css">
             <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                <img class="site-author-image" itemprop="image" src="{{@blog.cover_image}}" alt="{{@blog.title}}">
-                <p class="site-author-name" itemprop="name">待修改</p>
-                <p class="site-description motion-element" itemprop="description" >{{@blog.description}}</p>
+                <img class="site-author-image author-logo" itemprop="image" src="{{@blog.logo}}" alt="{{@blog.title}}">
+                <p class="site-author-name" itemprop="name">Liujia Hu</p>
             </div>
             <nav class="site-state motion-element" >
                 <div class="site-state-item site-state-posts">
                     <a href="/records">
+                        <span class="site-state-item-name">文章</span>
                         <span class="site-state-item-count">
                             {{#get "posts"}}
                                 {{pagination.total}}
                             {{/get}}
                         </span>
-                        <span class="site-state-item-name">文章</span>
                     </a>
                 </div>
-                <!-- <div class="site-state-item site-state-categories">
-      <a href="/categories">
-        <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">分类</span>
-      </a>
-    </div>-->
+
                 <div class="site-state-item site-state-categories">
                     <a href="/tags">
+                        <span class="site-state-item-name">标签</span>
                         <span class="site-state-item-count">
                             {{#get "tags"}}
                                 {{pagination.total}}
                             {{/get}}
                         </span>
-                        <span class="site-state-item-name">标签</span>
                     </a>
                 </div>
-                <!--
-                <div class="site-state-item site-state-tags">
-                    <a href="/tags">
-                        <span class="site-state-item-count">62</span>
-                        <span class="site-state-item-name">标签</span>
-                    </a>
-                </div>-->
+
             </nav>
-            <div class="feed-link motion-element" >
-                <a href="/rss" rel="alternate"><i class="fa fa-rss"></i>RSS</a>
-            </div>
-            <div class="links-of-author motion-element" >
-            </div>
-            <div class="links-of-author motion-element" >
-                <p class="site-author-name">友情链接</p>
 
-                <!--添加友情链接位置，每复制一个span并修改链接及内容即可-->
-                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">这里是友情链接</a></span>
-                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">这里还是友情链接</a></span>
-                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">again,友情链接</a></span>
-                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">呼呼友情链接</a></span>
-                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">再来一个友情链接</a></span>
-                <!--友链结束位置-->
-
+            <div class="hu-social-link">
+                <center>
+                <a class="hu-link" href="https://github.com/skydamon" target="_blank" rel="alternate">Gihub</a> <span>&ensp;</span>
+                <a class="hu-link" href="https://blog.csdn.net/damontive" target="_blank" rel="alternate">CSDN</a> <span>&ensp;</span>
+                <a class="hu-link" href="https://feedly.com/i/subscription/feed/{{@blog.url}}/rss/" target="_blank" rel="alternate">RSS</a>
+                </center>
             </div>
-        </section>
+            <div class="hu-tags">
+                <br>
+                <h4 class="hu-aside-title">文章分类</h4>
+                {{! Tag Cloud }}
+                {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+                    {{#foreach tags}}
+                    <li class="hu-a-tag">
+                        <a class="hu-tag-name" href="/tag/{{slug}}"> {{name}}（{{count.posts}}篇）</a>
+                    </li>
+                    {{/foreach}}
+                    
+                {{/get}}
+            </div>
+
+
+</section>
