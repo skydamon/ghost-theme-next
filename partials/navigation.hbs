@@ -2,20 +2,14 @@
     {{#foreach navigation}}
         <li class="menu-item menu-item-home nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
             <a href="{{url absolute="true"}}" rel="section">
-                <i class="menu-item-icon fa fa-home fa-fw"></i> <br>{{label}}
+                {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+                <h4 class="hu-aside-title">文章分类</h4>
+                    {{#foreach tags}}
+                        <a href="/tag/{{slug}}"> &ensp;&ensp;&ensp;{{name}}（{{count.posts}}篇）</a>
+                    {{/foreach}}    
+                {{/get}}
             </a>
         </li>
     {{/foreach}}
-    <li class="menu-item menu-item-search site-search">
-        <form class="site-search-form">
-            <input type="text" id="search-input" class="search-input default-search-input" autocomplete="off" autocorrect="off" autocapitalize="off" style="
-            background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcg…4LTUsNS01czUsMi4yMzgsNSw1cy0yLjIzOCw1LTUsNVMyLDkuNzYyLDIsN3oiLz48L3N2Zz4=') no-repeat 0 50%;
-            background-size: 12px 12px;
-            border: none;
-            border-bottom: 1px solid #999;
-            outline: none;">
-        </form>
-    </li>
-
 </ul>
 
