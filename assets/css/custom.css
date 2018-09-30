@@ -35,8 +35,19 @@
   }
 
 .hu-tag-title{
-    color:white;
-    background: black;
+    color:black;
     font-size: 2em;
-    font-style:bold;
+    font-style: bold;
+}
+
+#hu-title
+{
+    font-weight:800;
+}
+
+#hu-line
+{
+    border: 0;
+    height: 2px;
+    background: #333;
 }
