@@ -1,10 +1,10 @@
 <nav class="pagination">
     {{#if prev}}
-        <a class="page-number" href="{{page_url prev}}"><i class="fa fa-angle-left"></i></a>
+        <a class="page-number" href="{{page_url prev}}"><i class="fa fa-angle-left"></i>上一页</a>
     {{/if}}
-    <a>第{{page}}页 / 共{{pages}}页</a>
+    <spawn>第{{page}}页 / 共{{pages}}页</spawn>
     {{#if next}}
-        <a class="extend next" rel="next" href="{{page_url next}}"><i class="fa fa-angle-right"></i></a>
+        <a class="extend next" rel="next" href="{{page_url next}}">下一页<i class="fa fa-angle-right"></i></a>
     {{/if}}
     <!--
     <span class="page-number current">1</span>
